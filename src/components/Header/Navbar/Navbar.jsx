@@ -15,7 +15,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white p-4 flex items-center justify-between n shadow-md">
+    <nav style={{ background: 'linear-gradient(90deg, #799899, #aebfac, #acd7b6)' }} className=" p-4 flex items-center justify-between n shadow-md">
       <div className="flex items-center space-x-5">
         <button className="text-gray-800 text-2xl" onClick={handleClose}>
           ☰

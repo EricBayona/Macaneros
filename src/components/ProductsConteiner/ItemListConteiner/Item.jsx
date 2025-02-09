@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
 function Item({ product }) {
-  console.log(`/images/${product.imagen}`);
   
   return (
     <div className="bg-white shadow-md rounded-lg flex flex-col justify-between">
