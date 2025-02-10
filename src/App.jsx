@@ -4,8 +4,8 @@ import Header from "./components/Header/Header";
 import ItemListConteiner from "./components/ProductsConteiner/ItemListConteiner/ItemListConteiner";
 import ItemDetailConteiner from "./components/ProductsConteiner/ItemDetailConteiner/ItemDetailConteiner";
 import { useState } from "react";
-import { ShoppigCartContext } from "./components/Context/ShoppingCartContext";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
+import { ShoppigCartContext } from "./Context/ShoppingCartContext";
 function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
 
@@ -26,9 +26,14 @@ function App() {
   const cartBadge = ()=>{
     return shoppingCart.reduce((acc, product) => acc + product.quantity,0 )
   }
-
+  const totalPrice = ()=>{
+    return shoppingCart.reduce((acc,product)=> acc + product.precio * product.quantity,0)
+  }
+  const empty = ()=>{
+    setShoppingCart([])
+  }
   return (
-    <ShoppigCartContext.Provider value={{ shoppingCart, handleAdd, cartBadge }}>
+    <ShoppigCartContext.Provider value={{ shoppingCart, handleAdd, cartBadge, totalPrice, empty}}>
       <BrowserRouter>
         <Header />
 

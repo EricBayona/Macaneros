@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import ItemCount from "../../ItemCount/ItemCount";
-import { ShoppigCartContext } from "../../Context/ShoppingCartContext";
+import { ShoppigCartContext } from "../../../Context/ShoppingCartContext";
 
 function ItemDetail({ item }) {
 

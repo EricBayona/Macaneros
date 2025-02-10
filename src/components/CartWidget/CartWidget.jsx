@@ -2,7 +2,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons/faShoppingCart
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ShoppigCartContext } from "../Context/ShoppingCartContext";
+import { ShoppigCartContext } from "../../Context/ShoppingCartContext";
 
 function CartWidget() {
   const { cartBadge } = useContext(ShoppigCartContext);
