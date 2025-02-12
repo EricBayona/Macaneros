@@ -8,8 +8,9 @@ export const Footer = () => {
       style={{
         background: "linear-gradient(90deg, #799899, #aebfac, #acd7b6)",
       }}
-      className=" p-4 md:flex items-center justify-between n shadow-md "
+      
     >
+      <div className=" p-4 md:flex items-center justify-between n  ">
       <Link to={"/"} className="text-2xl font-serif text-red-700">
         <img
           className="mx-auto h-20 object-cover rounded-t-lg"
@@ -19,6 +20,14 @@ export const Footer = () => {
       </Link>
       <BusinessInfo/>
       <Search className={"items-center  hidden lg:flex"}/>
+
+      </div>
+
+
+      <div>
+      <p>© 2025 Macaneros. Todos los derechos reservados.</p>
+
+      </div>
     </footer>
   );
 };

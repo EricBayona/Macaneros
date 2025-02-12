@@ -25,29 +25,40 @@ function App() {
     setShoppingCart(newShoppingCart);
   };
 
-  const cartBadge = ()=>{
-    return shoppingCart.reduce((acc, product) => acc + product.quantity,0 )
-  }
-  const totalPrice = ()=>{
-    return shoppingCart.reduce((acc,product)=> acc + product.precio * product.quantity,0)
-  }
-  const empty = ()=>{
-    setShoppingCart([])
-  }
+  const cartBadge = () => {
+    return shoppingCart.reduce((acc, product) => acc + product.quantity, 0);
+  };
+  const totalPrice = () => {
+    return shoppingCart.reduce(
+      (acc, product) => acc + product.precio * product.quantity,
+      0
+    );
+  };
+  const empty = () => {
+    setShoppingCart([]);
+  };
   return (
-    <ShoppigCartContext.Provider value={{ shoppingCart, handleAdd, cartBadge, totalPrice, empty}}>
-      <BrowserRouter>
-        <Header />
-        <ButtonWhatsapp/>
-
-        <Routes>
-          <Route path="/" element={<ItemListConteiner />} />
-          <Route path="/products/:category" element={<ItemListConteiner />} />
-          <Route path="/item/:id" element={<ItemDetailConteiner />} />
-          <Route path="/shoppingcart" element={<ShoppingCart />} />
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
+    <ShoppigCartContext.Provider
+      value={{ shoppingCart, handleAdd, cartBadge, totalPrice, empty }}
+    >
+      <div className="flex-container">
+        <BrowserRouter>
+          <Header />
+          <ButtonWhatsapp />
+          <div className="flex-content">
+            <Routes>
+              <Route path="/" element={<ItemListConteiner />} />
+              <Route
+                path="/products/:category"
+                element={<ItemListConteiner />}
+              />
+              <Route path="/item/:id" element={<ItemDetailConteiner />} />
+              <Route path="/shoppingcart" element={<ShoppingCart />} />
+            </Routes>
+          </div>
+          <Footer />
+        </BrowserRouter>
+      </div>
     </ShoppigCartContext.Provider>
   );
 }
