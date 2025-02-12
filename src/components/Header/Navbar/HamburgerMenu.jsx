@@ -6,7 +6,7 @@ import Search from "../../Search/Search";
 import { Link} from "react-router-dom";
 
 function HamburgerMenu({ isOpen, handleClose }) {
-  const linkClases = "block  text-gray-800 hover:bg-gray-100 pb-2";
+  // const linkClases = "block  text-gray-800 hover:bg-gray-100 pb-2";
   return (
     <ul
       className={`${
@@ -17,8 +17,8 @@ function HamburgerMenu({ isOpen, handleClose }) {
         <button onClick={handleClose}>X</button>
       </li>
       <Search className="items-center block lg:hidden" />
-      <Link to="/">Ver Todo</Link>
-      <AccordionItem title="Promos">
+      <Link to="/" onClick={handleClose}>Ver Todo</Link>
+      {/* <AccordionItem title="Promos">
         <li>
           <a href="#promos1" className={linkClases}>
             Promo 1
@@ -29,18 +29,18 @@ function HamburgerMenu({ isOpen, handleClose }) {
             Promo 2
           </a>
         </li>
-      </AccordionItem>
+      </AccordionItem> */}
       <AccordionItem title="Mujer">
-        <Link to="/products/mujer">Ver todo Mujer</Link>
+        <Link to="/products/mujer" onClick={handleClose}>Ver todo Mujer</Link>
       </AccordionItem>
       <AccordionItem title="Teens">
-      <Link to="/products/teens">Ver todo Teens</Link>
+      <Link to="/products/teens" onClick={handleClose}>Ver todo Teens</Link>
       </AccordionItem>
       <AccordionItem title="Niños">
-        <Link to="/productos/niños">Ver todo Niños</Link>
+        <Link to="/productos/niños" onClick={handleClose}>Ver todo Niños</Link>
         </AccordionItem>
       <AccordionItem title="Hombre">
-        <Link to="/products/hombre">Ver todo Hombre</Link>
+        <Link to="/products/hombre" onClick={handleClose}>Ver todo Hombre</Link>
       </AccordionItem>
       
       <Help className={"items-center font-bold text-blue-400 hover:text-gray-800 block md:hidden p-4"}/>

@@ -1,11 +1,25 @@
 import { useContext } from "react";
 import { ShoppigCartContext } from "../../Context/ShoppingCartContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 function ShoppingCart() {
   const {shoppingCart,totalPrice, empty}= useContext(ShoppigCartContext);
   const handleEmpty = ()=>{
     empty()
-  }
+  };
+
+  const createCartMessage = (shoppingCart)=>{
+    let mesaage = "Hola, me gustaría comprar los siguientes productos: \n \n";
+    shoppingCart.forEach((item) => {
+      mesaage +=`${item.nombre} - Cantidad: ${item.quantity} - Precio: $${item.precio * item.quantity} \n`;
+    });
+    mesaage += `\nPrecio total: $${totalPrice()}`;
+    return encodeURIComponent(mesaage);
+  };
+
+  const cartMessage = createCartMessage(shoppingCart);
+  const whatsappLink = `https://wa.me/543865452010?text=${cartMessage}`;
   return (
     <div className="p-4 bg-gray-100 rounded-md">
   {shoppingCart.map((pijamas, index) => (
@@ -23,7 +37,9 @@ function ShoppingCart() {
     <div className="mt-4 p-4 bg-white rounded-md shadow-md">
       <h3 className="text-xl font-semibold">Precio Total = ${totalPrice()}</h3>
       <div className="flex space-x-2 mt-4">
-        <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Comprar</button>
+      <a href={whatsappLink} className="text-3xl p-2">
+              <FontAwesomeIcon className="bg-green-500 p-2 rounded-3xl text-white" icon={faWhatsapp} />
+            </a>
         <button onClick={handleEmpty} className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Vaciar Carrito</button>
       </div>
     </div>

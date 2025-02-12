@@ -13,7 +13,7 @@ function AccordionItem({ title, children }) {
     <li className="p-4">
       <button
         onClick={handleToggle}
-        className="font-bold text-gray-800 hover:bg-gray-100 w-full text-left flex justify-between items-center"
+        className="font-bold text-gray-800 w-full text-left flex justify-between items-center"
       >
         <span >{title}</span>
         <span className="ml-auto"><FontAwesomeIcon icon={isOpen ? faArrowDown : faArrowLeft} className=" text-gray-500"/></span>

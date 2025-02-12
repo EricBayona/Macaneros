@@ -5,3 +5,6 @@
     font-family: 'Noto Serif', serif;
   }
 }
+button {
+  @apply transition duration-300 ease-in-out transform hover:scale-105 active:scale-95;
+}

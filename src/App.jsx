@@ -6,6 +6,8 @@ import ItemDetailConteiner from "./components/ProductsConteiner/ItemDetailContei
 import { useState } from "react";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import { ShoppigCartContext } from "./Context/ShoppingCartContext";
+import { Footer } from "./components/Footer/Footer";
+import { ButtonWhatsapp } from "./components/BusinessInfo/ButtonWhatsapp";
 function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
 
@@ -36,6 +38,7 @@ function App() {
     <ShoppigCartContext.Provider value={{ shoppingCart, handleAdd, cartBadge, totalPrice, empty}}>
       <BrowserRouter>
         <Header />
+        <ButtonWhatsapp/>
 
         <Routes>
           <Route path="/" element={<ItemListConteiner />} />
@@ -43,6 +46,7 @@ function App() {
           <Route path="/item/:id" element={<ItemDetailConteiner />} />
           <Route path="/shoppingcart" element={<ShoppingCart />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </ShoppigCartContext.Provider>
   );
