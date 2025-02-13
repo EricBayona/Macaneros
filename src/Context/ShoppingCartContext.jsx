@@ -35,7 +35,11 @@ export const CartProvider = ({children}) => {
     const empty = () => {
       setShoppingCart([]);
     };
-
+    const removeFromCart =(id) =>{
+        setShoppingCart((prevCart)=> prevCart.filter((product)=>product.id !== id)
+    )
+    
+    }
     const [quantity, setQuantity] = useState(1);
   const handleDecrement = () => {
     quantity > 1 && setQuantity(quantity - 1);
@@ -50,7 +54,16 @@ export const CartProvider = ({children}) => {
 
     return (
     <ShoppingCartContext.Provider
-    value={{ shoppingCart, handleAdd, cartBadge, totalPrice, empty, handleDecrement, handleIncrement, quantity }}
+    value={{ 
+        shoppingCart,
+        handleAdd, 
+        cartBadge, 
+        totalPrice, 
+        empty, 
+        handleDecrement, 
+        handleIncrement, 
+        quantity, 
+        removeFromCart }}
   >
     {children}
     </ShoppingCartContext.Provider>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 function ShoppingCart() {
-  const { shoppingCart, totalPrice, empty } = useContext(ShoppingCartContext);
+  const { shoppingCart, totalPrice, empty, removeFromCart } = useContext(ShoppingCartContext);
   const handleEmpty = () => {
     empty();
   };
@@ -42,9 +42,10 @@ function ShoppingCart() {
             <p className="text-sm text-gray-800">
               Precio unitario: ${pijamas.precio}
             </p>
-            <span className="text-sm text-gray-800">
+            <p className="text-sm text-gray-800">
               Precio total: ${pijamas.precio * pijamas.quantity}
-            </span>
+            </p>
+            <button className="bg-red-500 text-white px-1 py-1 mt-2 rounded-md hover:bg-red-600 transition duration-300" onClick={()=>removeFromCart(pijamas.id)}>Eliminar</button>
           </div>
         </div>
       ))}
