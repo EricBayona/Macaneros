@@ -2,10 +2,10 @@
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { ShoppigCartContext } from "../../../Context/ShoppingCartContext";
+import { ShoppingCartContext } from "../../../Context/ShoppingCartContext";
 
 function Item({ product }) {
-  const { handleAdd } = useContext(ShoppigCartContext);
+  const { handleAdd } = useContext(ShoppingCartContext);
   return (
     <div className="bg-white shadow-md rounded-lg flex flex-col justify-between">
       <div className="relative w-full">

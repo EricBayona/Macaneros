@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { ShoppigCartContext } from "../../Context/ShoppingCartContext";
+import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 function ShoppingCart() {
-  const { shoppingCart, totalPrice, empty } = useContext(ShoppigCartContext);
+  const { shoppingCart, totalPrice, empty } = useContext(ShoppingCartContext);
   const handleEmpty = () => {
     empty();
   };

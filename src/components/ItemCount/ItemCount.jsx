@@ -1,5 +1,8 @@
+import { useContext } from "react";
+import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
 
-function ItemCount({quantity, handleDecrement, handleIncrement}) {
+function ItemCount() {
+      const {handleDecrement, handleIncrement, quantity}= useContext(ShoppingCartContext);
     
   return (
     <div className="flex items-center mt-4">
