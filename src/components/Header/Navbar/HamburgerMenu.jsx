@@ -4,6 +4,8 @@ import CartWidget from "../../CartWidget/CartWidget";
 // import Login from "../../Login/Login";
 // import Search from "../../Search/Search";
 import { Link} from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 function HamburgerMenu({ isOpen, handleClose }) {
   // const linkClases = "block  text-gray-800 hover:bg-gray-100 pb-2";
@@ -46,6 +48,7 @@ function HamburgerMenu({ isOpen, handleClose }) {
       {/* <Help className={"items-center font-bold text-blue-400 hover:text-gray-800 block md:hidden p-4"}/> */}
       {/* <Login className={"items-center font-bold text-blue-400 hover:text-gray-800 block md:hidden p-4"}/> */}
       <CartWidget/>
+      <a className="text-black text-4xl p-3 " href="https://www.instagram.com/macaneros_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
     </ul>
   );
 }

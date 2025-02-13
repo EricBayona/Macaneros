@@ -8,7 +8,7 @@ const BusinessInfo = () => {
         <strong>Dirección:</strong> French y Beruti
       </p>
       <p className="mb-2 mr-4">
-        <strong>Teléfono:</strong> 38650111222333
+        <strong>Teléfono:</strong> 3865452010
       </p>
       <p className="mb-2">
         <strong>Email:</strong> macaneros@gmail.com
