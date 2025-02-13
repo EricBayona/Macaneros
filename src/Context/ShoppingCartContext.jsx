@@ -1,10 +1,13 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 
 export const ShoppingCartContext = createContext();
 
+const  initialCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+
+
 export const CartProvider = ({children}) => {
-    const [shoppingCart, setShoppingCart] = useState([]);
+    const [shoppingCart, setShoppingCart] = useState(initialCart);
 
     const handleAdd = (item, quantity) => {
       const addedItem = { ...item, quantity };
@@ -40,6 +43,10 @@ export const CartProvider = ({children}) => {
   const handleIncrement = () => {
     setQuantity(quantity + 1);
   };
+  useEffect(() => {
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart))
+  }, [shoppingCart])
+  
 
     return (
     <ShoppingCartContext.Provider
