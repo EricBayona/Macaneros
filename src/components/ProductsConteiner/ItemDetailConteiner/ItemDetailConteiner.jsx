@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { requestItem } from "../../Helpers/requestData";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import ShoppingCart from "../../ShoppingCart/ShoppingCart";
 
 function ItemDetailConteiner() {
 
@@ -24,7 +23,6 @@ function ItemDetailConteiner() {
   return (
       <div>
         {item && <ItemDetail item={item}/>}
-        <ShoppingCart item={item}/>
     </div>
 );
 }

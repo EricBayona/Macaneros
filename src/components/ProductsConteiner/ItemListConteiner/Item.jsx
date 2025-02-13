@@ -9,11 +9,15 @@ function Item({ product }) {
   return (
     <div className="bg-white shadow-md rounded-lg flex flex-col justify-between">
       <div className="relative w-full">
+      <Link to={`/item/${product.id}`}>
+
         <img
           className=" w-full h-64 object-contain rounded-t-lg"
           src={`/images/${product.imagen}`}
           alt={product.nombre}
         />
+                </Link>
+
       </div>
       <div className="w-full mt-2 flex flex-col justify-between min-h-[80px]">
         <Link to={`/item/${product.id}`}>
