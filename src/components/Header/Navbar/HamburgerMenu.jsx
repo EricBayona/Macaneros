@@ -32,17 +32,25 @@ function HamburgerMenu({ isOpen, handleClose }) {
           </a>
         </li>
       </AccordionItem> */}
-      <AccordionItem title="Mujer">
-        <Link to="/products/mujer" onClick={handleClose}>Ver todo Mujer</Link>
+      <AccordionItem title="Adultos">
+        <Link to="/products/pijamas animados adultos" onClick={handleClose}><h4>Pijamas Animados cortos</h4></Link>
+        <Link to="/products/pijamas mujer verano" onClick={handleClose}><h4 >Pijamas Mujer Verano</h4></Link>
       </AccordionItem>
       <AccordionItem title="Teens">
       <Link to="/products/teens" onClick={handleClose}>Ver todo Teens</Link>
       </AccordionItem>
       <AccordionItem title="Niños">
-        <Link to="/productos/niños" onClick={handleClose}>Ver todo Niños</Link>
+        <Link to="/products/pijamas niños cortos" onClick={handleClose}><h4 >Pijamas cortos</h4></Link>
+        <Link to="/products/niños" onClick={handleClose}><h4>Pijamas largos</h4></Link>
         </AccordionItem>
-      <AccordionItem title="Hombre">
-        <Link to="/products/hombre" onClick={handleClose}>Ver todo Hombre</Link>
+      <AccordionItem title="Pijamas 3 piezas">
+        <Link to="/products/pijamas tres piezas" onClick={handleClose}>Pijamas 3 piezas</Link>
+      </AccordionItem>
+      <AccordionItem title="Accesorios">
+        <Link to="/products/accesorios" onClick={handleClose}>Accesorios</Link>
+      </AccordionItem>
+      <AccordionItem title="Toallones y Sabanas">
+        <Link to="/products/toallones y sabanas" onClick={handleClose}>Toallones y Sabanas</Link>
       </AccordionItem>
       
       {/* <Help className={"items-center font-bold text-blue-400 hover:text-gray-800 block md:hidden p-4"}/> */}

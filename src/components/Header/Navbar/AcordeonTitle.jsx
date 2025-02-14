@@ -19,7 +19,7 @@ function AccordionItem({ title, children }) {
         <span className="ml-auto"><FontAwesomeIcon icon={isOpen ? faArrowDown : faArrowLeft} className=" text-gray-500"/></span>
         
       </button>
-      {isOpen && <ul className="pl-8 pt-3 ">{children}</ul>}
+      {isOpen && <ul className="pl-8 pt-3 font-bold text-gray-800">{children}</ul>}
     </li>
   );
 }

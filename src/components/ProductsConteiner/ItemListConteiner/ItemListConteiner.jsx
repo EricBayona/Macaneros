@@ -17,7 +17,7 @@ function ItemListConteiner() {
         setTitle(category.charAt(0).toUpperCase() + category.slice(1));
       } else {
         setProducts(res);
-        setTitle("Pijamas");
+        setTitle("");
       }
       setVisibleProducts(5)
     });
