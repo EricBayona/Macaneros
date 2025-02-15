@@ -116,7 +116,7 @@
   {
     "id": "19",
     "nombre": "Intensamente Cuadrados",
-    "precio": 12,
+    "precio": 12000,
     "talla": "8-12",
     "categoria": "pijamas niños cortos",
     "imagen": "IMG-20250209-WA0040.jpg"
@@ -320,7 +320,7 @@
   {
     "id": "63",
     "nombre": "Morley Coral",
-    "precio": 3100,
+    "precio": 15000,
     "talla": "44 al 48",
     "categoria": "pijamas mujer verano",
     "imagen": "IMG-20250209-WA0084.jpg"
