@@ -33,6 +33,11 @@ function Crud() {
       });
       console.log("Nuevo producto creado con ID:", newId);
       mostrarProductos();
+      setNombre("");
+      setPrecio("");
+      setSize("");
+      setImagen("");
+      setCategoria("");
     } catch (error) {
       console.error("Error al crear el producto:", error);
     }
@@ -57,18 +62,21 @@ function Crud() {
       <div className="mb-4 flex flex-wrap gap-4">
         <input
           type="text"
+          value={nombre}
           onChange={(e) => setNombre(e.target.value)}
           placeholder="Nombre"
           className="border p-2"
         />
         <input
           type="text"
+          value={precio}
           onChange={(e) => setPrecio(e.target.value)}
           placeholder="Precio"
           className="border p-2"
         />
         <input
           type="text"
+          value={imagen}
           onChange={(e) => setImagen(e.target.value)}
           placeholder="URL de imagenn"
           className="border p-2"
@@ -79,30 +87,34 @@ function Crud() {
           placeholder="Categoría"
           className="border p-2"
         /> */}
-        <label htmlFor="categoria">Selecciona la categoria:</label>
-        <select
-          id="categoria"
-          name="categoria"
-          onChange={(e) => {
-            console.log("Categoría seleccionada:", e.target.value);
-            setCategoria(e.target.value);
-          }}
-        >
-          <option value="pijamas animados adultos cortos">
-            pijamas animados adultos cortos
-          </option>
-          <option value="pijamas animados adultos largos">
-            pijamas animados adultos largos
-          </option>
-          <option value="pijamas mujer verano">pijamas mujer verano</option>
-          <option value="pijamas niños cortos">pijamas niños cortos</option>
-          <option value="pijamas niños largos">pijamas niños largos</option>
-          <option value="pijamas tres piezas">pijamas tres piezas</option>
-          <option value="accesorios">accesorios</option>
-          <option value="toallones y sabanas">toallones y sabanas</option>
-        </select>
+        <div className="flex items-center justify-center border-1">
+          <label htmlFor="categoria">Selecciona la categoria:</label>
+          <select
+            id="categoria"
+            name="categoria"
+            value={categoria}
+            onChange={(e) => setCategoria(e.target.value)}
+          >
+            <option value="" disabled>
+              Seleccione una categoría
+            </option>
+            <option value="pijamas animados adultos cortos">
+              pijamas animados adultos cortos
+            </option>
+            <option value="pijamas animados adultos largos">
+              pijamas animados adultos largos
+            </option>
+            <option value="pijamas mujer verano">pijamas mujer verano</option>
+            <option value="pijamas niños cortos">pijamas niños cortos</option>
+            <option value="pijamas niños largos">pijamas niños largos</option>
+            <option value="pijamas tres piezas">pijamas tres piezas</option>
+            <option value="accesorios">accesorios</option>
+            <option value="toallones y sabanas">toallones y sabanas</option>
+          </select>
+        </div>
         <input
           type="text"
+          value={size}
           onChange={(e) => setSize(e.target.value)}
           placeholder="Talle"
           className="border p-2"
