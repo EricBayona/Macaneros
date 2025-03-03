@@ -11,7 +11,6 @@ import Login from "./Pages/login";
 import ProtectedRoute from "./Login/ProtectedRoute";
 import Crud from "./Pages/crud";
 import { AuthProvider } from "./Login/AuthProvider";
-import UploadImage from "./fireBase/UploadImage";
 function App() {
   return (
     <CartProvider>
@@ -30,7 +29,6 @@ function App() {
                 <Route path="/item/:id" element={<ItemDetailConteiner />} />
                 <Route path="/shoppingcart" element={<ShoppingCart />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/subirimagen" element={<UploadImage />} />
                 <Route
                   path="/addProducts"
                   element={

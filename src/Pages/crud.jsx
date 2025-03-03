@@ -5,9 +5,8 @@ function Crud() {
   const [precio, setPrecio] = useState("");
   const [imagen, setImagen] = useState("");
   const [categoria, setCategoria] = useState("");
-  // const [newnombre, setNewnombre] = useState('');
+  const [size, setSize] = useState("");
   const [productos, setProductos] = useState([]);
-  // const [id, setId] = useState('');
 
   useEffect(() => {
     mostrarProductos();
@@ -25,7 +24,13 @@ function Crud() {
 
   const handleCreate = async () => {
     try {
-      const newId = await createItem({ nombre, precio, imagen, categoria });
+      const newId = await createItem({
+        nombre,
+        precio,
+        imagen,
+        size,
+        categoria,
+      });
       console.log("Nuevo producto creado con ID:", newId);
       mostrarProductos();
     } catch (error) {
@@ -46,18 +51,6 @@ function Crud() {
       console.error(`Error al eliminar el producto con ID: ${id}`, error);
     }
   };
-
-  // const handleUpdate = async (id) => {
-  //   try {
-  //     const result = await updateItem(id, { nombre: newnombre });
-  //     if (result) {
-  //       console.log(`producto actualizado con ID: ${id}`);
-  //       mostrarProductos();
-  //     }
-  //   } catch (error) {
-  //     console.error(`Error al actualizar el producto con ID: ${id}`, error);
-  //   }
-  // };
 
   return (
     <>
@@ -86,6 +79,12 @@ function Crud() {
           placeholder="Categoría"
           className="border p-2"
         />
+        <input
+          type="text"
+          onChange={(e) => setSize(e.target.value)}
+          placeholder="Talle"
+          className="border p-2"
+        />
         <button
           onClick={handleCreate}
           className="bg-blue-500 text-white p-2 rounded"
@@ -93,14 +92,7 @@ function Crud() {
           Insertar producto
         </button>
       </div>
-      {/* <div className="mb-4">
-          <input 
-            type="text" 
-            onChange={e => setNewnombre(e.target.value)} 
-            placeholder="Nuevo título" 
-            className="border p-2"
-          />
-        </div> */}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {productos.map((book) => (
           <div key={book.id} className="border p-4 rounded shadow">
@@ -119,12 +111,6 @@ function Crud() {
               >
                 Borrar
               </button>
-              {/* <button 
-                  onClick={() => handleUpdate(book.id)} 
-                  className="bg-green-500 text-white p-2 rounded"
-                >
-                  Actualizar
-                </button> */}
             </div>
           </div>
         ))}
