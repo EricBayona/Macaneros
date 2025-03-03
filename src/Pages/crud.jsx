@@ -73,12 +73,34 @@ function Crud() {
           placeholder="URL de imagenn"
           className="border p-2"
         />
-        <input
-          type="text"
+        {/* <input
+          type=""
           onChange={(e) => setCategoria(e.target.value)}
           placeholder="Categoría"
           className="border p-2"
-        />
+        /> */}
+        <label htmlFor="categoria">Selecciona la categoria:</label>
+        <select
+          id="categoria"
+          name="categoria"
+          onChange={(e) => {
+            console.log("Categoría seleccionada:", e.target.value);
+            setCategoria(e.target.value);
+          }}
+        >
+          <option value="pijamas animados adultos cortos">
+            pijamas animados adultos cortos
+          </option>
+          <option value="pijamas animados adultos largos">
+            pijamas animados adultos largos
+          </option>
+          <option value="pijamas mujer verano">pijamas mujer verano</option>
+          <option value="pijamas niños cortos">pijamas niños cortos</option>
+          <option value="pijamas niños largos">pijamas niños largos</option>
+          <option value="pijamas tres piezas">pijamas tres piezas</option>
+          <option value="accesorios">accesorios</option>
+          <option value="toallones y sabanas">toallones y sabanas</option>
+        </select>
         <input
           type="text"
           onChange={(e) => setSize(e.target.value)}
