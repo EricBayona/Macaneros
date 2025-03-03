@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { ShoppingCartContext } from "../../Context/ShoppingCartContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function ShoppingCart() {
-  const { shoppingCart, totalPrice, empty, removeFromCart } = useContext(ShoppingCartContext);
+  const { shoppingCart, totalPrice, empty, removeFromCart } =
+    useContext(ShoppingCartContext);
   const handleEmpty = () => {
     empty();
   };
@@ -21,7 +23,7 @@ function ShoppingCart() {
   };
 
   const cartMessage = createCartMessage(shoppingCart);
-  const whatsappLink = `https://wa.me/543865452010?text=${cartMessage}`;
+  const whatsappLink = `https://wa.me/5493865863942?text=${cartMessage}`;
   return (
     <div className="p-4 bg-gray-100 rounded-md">
       {shoppingCart.map((pijamas, index) => (
@@ -31,7 +33,7 @@ function ShoppingCart() {
         >
           <img
             className="w-16 h-16 mr-4 rounded"
-            src={`/images/${pijamas.imagen}`}
+            src={pijamas.imagen}
             alt={pijamas.nombre}
           />
           <div>
@@ -45,7 +47,15 @@ function ShoppingCart() {
             <p className="text-sm text-gray-800">
               Precio total: ${pijamas.precio * pijamas.quantity}
             </p>
-            <button className="bg-red-500 text-white px-1 py-1 mt-2 rounded-md hover:bg-red-600 transition duration-300" onClick={()=>removeFromCart(pijamas.id)}>Eliminar</button>
+            <button
+              className="text-white px-1 py-1 mt-2 rounded-md hover:bg-gray-500 transition duration-300"
+              onClick={() => removeFromCart(pijamas.id)}
+            >
+              <FontAwesomeIcon
+                className="bg-gray-400 p-2 rounded-3xl text-white"
+                icon={faTrash}
+              />
+            </button>
           </div>
         </div>
       ))}
@@ -59,7 +69,7 @@ function ShoppingCart() {
           <h3 className="text-xl font-semibold">
             Precio Total = ${totalPrice()}
           </h3>
-          <div className="flex space-x-2 mt-4">
+          <div className="flex space-x-2 mt-4 items-center">
             <a href={whatsappLink} className="text-3xl p-2">
               <FontAwesomeIcon
                 className="bg-green-500 p-2 rounded-3xl text-white"
@@ -68,16 +78,15 @@ function ShoppingCart() {
             </a>
             <button
               onClick={handleEmpty}
-              className="px-2  bg-red-500 text-white rounded hover:bg-red-600"
+              className="px-1 py-1 h-8 bg-red-500 text-white rounded hover:bg-red-600"
             >
               Vaciar Carrito
             </button>
           </div>
         </div>
       )}
-      {shoppingCart.length ===0 &&(
-              <h4 className="text-lg font-semibold mb-2">Tu carrito está Vacio </h4>
-
+      {shoppingCart.length === 0 && (
+        <h4 className="text-lg font-semibold mb-2">Tu carrito está Vacio </h4>
       )}
     </div>
   );

@@ -9,22 +9,19 @@ function Item({ product }) {
   return (
     <div className="bg-white shadow-md rounded-lg flex flex-col justify-between">
       <div className="relative w-full">
-      <Link to={`/item/${product.id}`}>
-
-        <img
-          className=" w-full h-64 object-contain rounded-t-lg"
-          src={`/images/${product.imagen}`}
-          alt={product.nombre}
-        />
-                </Link>
-
+        <Link to={`/item/${product.id}`}>
+          <img
+            className=" w-full h-64 object-contain rounded-t-lg"
+            src={product.imagen}
+            alt={product.nombre}
+          />
+        </Link>
       </div>
       <div className="w-full mt-2 flex flex-col justify-between min-h-[80px]">
         <Link to={`/item/${product.id}`}>
           <h4 className="text-xl font-semibold underline">{product.nombre}</h4>
           <p className="text-gray-600">Categoria: {product.categoria}</p>
           <p className="text-gray-800 font-bold">Precio: ${product.precio}</p>
-
         </Link>
 
         <div className="flex justify-around p-4 space-x-4">

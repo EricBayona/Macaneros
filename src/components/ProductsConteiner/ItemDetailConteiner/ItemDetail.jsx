@@ -1,22 +1,16 @@
-import { useContext} from "react";
-import ItemCount from "../../ItemCount/ItemCount";
+import { useContext } from "react";
 import { ShoppingCartContext } from "../../../Context/ShoppingCartContext";
 
 function ItemDetail({ item }) {
-
-  const {shoppingCart, handleAdd, quantity}= useContext(ShoppingCartContext);
+  const { shoppingCart, handleAdd, quantity } = useContext(ShoppingCartContext);
   console.log(shoppingCart);
-  
 
-
-  
- 
   return (
     <div className="flex flex-col md:flex-row p-4">
       <div className="flex-shrink-0 md:w-1/3 lg:w-1/2">
         <img
-        className=" w-full h-64 object-contain rounded-t-lg"
-          src={`/images/${item.imagen}`}
+          className=" w-full h-64 object-contain rounded-t-lg"
+          src={item.imagen}
           alt={item.nombre}
         />
       </div>
@@ -25,10 +19,12 @@ function ItemDetail({ item }) {
         <p className="text-gray-800 font-bold">$ {item.precio}</p>
         <p className="text-gray-600">color: {item.color}</p>
         <p className="text-gray-600">Talle:{item.talla}</p>
-        <ItemCount/>
+
         <button
           className="mt-4 p-2 border bg-blue-300 rounded-3xl border-blue-300 hover:bg-gray-100 transition duration-300 text-center"
-          onClick={() =>{handleAdd(item,quantity)}}
+          onClick={() => {
+            handleAdd(item, quantity);
+          }}
         >
           Comprar
         </button>

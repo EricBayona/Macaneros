@@ -1,5 +1,3 @@
-
-
 const BusinessInfo = () => {
   return (
     <div className="p-4 rounded shadow-md text-center md:flex flex-wrap items-center justify-center">
@@ -8,12 +6,11 @@ const BusinessInfo = () => {
         <strong>Dirección:</strong> French y Beruti
       </p>
       <p className="mb-2 mr-4">
-        <strong>Teléfono:</strong> 3865452010
+        <strong>Teléfono:</strong> 3865 86-3942
       </p>
       <p className="mb-2">
         <strong>Email:</strong> macaneros@gmail.com
       </p>
-      
     </div>
   );
 };
