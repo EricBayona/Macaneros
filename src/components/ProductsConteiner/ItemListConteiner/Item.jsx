@@ -11,7 +11,7 @@ function Item({ product }) {
       <div className="relative w-full">
         <Link to={`/item/${product.id}`}>
           <img
-            className=" w-full h-64 object-contain rounded-t-lg"
+            className=" w-full h-64 object-contain rounded-4xl"
             src={product.imagen}
             alt={product.nombre}
           />
@@ -27,9 +27,9 @@ function Item({ product }) {
         <div className="flex justify-around p-4 space-x-4">
           <button
             style={{
-              background: "linear-gradient(90deg, #799899, #aebfac, #acd7b6)",
+              background: "#f5f5f5",
             }}
-            className="p-2 border rounded-3xl border-blue-300 hover:bg-gray-100 transition duration-300 w-full flex-grow text-center"
+            className="p-2 border rounded-3xl border-gray-400 hover:bg-gray-100 transition duration-300 w-full flex-grow text-center"
             onClick={() => {
               handleAdd(product, 1);
             }}

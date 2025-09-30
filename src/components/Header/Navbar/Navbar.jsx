@@ -18,9 +18,9 @@ function Navbar() {
 
   return (
     <nav
-      style={{
-        background: "linear-gradient(90deg, #799899, #aebfac, #acd7b6)",
-      }}
+      // style={{
+      //   background: "linear-gradient(90deg, #799899, #aebfac, #acd7b6)",
+      // }}
       className=" p-4 flex items-center justify-between n shadow-md"
     >
       <div className="flex items-center space-x-5">
@@ -31,13 +31,13 @@ function Navbar() {
       </div>
       <Link to={"/"} className="text-2xl font-serif text-red-700">
         <img
-          className="w-full h-20 object-cover rounded-t-lg"
+          className="w-full h-20 object-cover rounded-full"
           src="/logo.jpg"
           alt=""
         />
       </Link>
 
-      <ul className="space-x-4 pr-6 md:flex items-center">
+      <ul className="space-x-4 pr-6 flex items-center">
         {/* <Help className={"items-center text-gray-600 hover:text-gray-800 hidden md:flex"}/>
         <Login className={"items-center text-gray-600 hover:text-gray-800 hidden md:flex"} /> */}
         <CartWidget />

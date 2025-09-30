@@ -11,9 +11,9 @@ function HamburgerMenu({ isOpen, handleClose }) {
   // const linkClases = "block  text-gray-800 hover:bg-gray-100 pb-2";
   return (
     <ul
-      style={{
-        background: "linear-gradient(90deg, #799899, #aebfac, #acd7b6)",
-      }}
+      // style={{
+      //   background: "linear-gradient(90deg, #799899, #aebfac, #acd7b6)",
+      // }}
       className={`${
         isOpen ? "block" : "hidden"
       } bg-white shadow-md rounded-md absolute top-0 left-0 h-full w-80 z-10`}

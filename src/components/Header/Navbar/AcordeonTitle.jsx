@@ -15,11 +15,17 @@ function AccordionItem({ title, children }) {
         onClick={handleToggle}
         className="font-bold text-gray-800 w-full text-left flex justify-between items-center"
       >
-        <span >{title}</span>
-        <span className="ml-auto"><FontAwesomeIcon icon={isOpen ? faArrowDown : faArrowLeft} className=" text-gray-500"/></span>
-        
+        <span>{title}</span>
+        <span className="ml-auto">
+          <FontAwesomeIcon
+            icon={isOpen ? faArrowDown : faArrowLeft}
+            className=" text-gray-500"
+          />
+        </span>
       </button>
-      {isOpen && <ul className="pl-8 pt-3 font-bold text-gray-800">{children}</ul>}
+      {isOpen && (
+        <ul className="pl-8 pt-3 font-bold text-gray-800">{children}</ul>
+      )}
     </li>
   );
 }

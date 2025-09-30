@@ -57,6 +57,37 @@ function Crud() {
     }
   };
 
+  const [uploading, setUploading] = useState(false);
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploading(true);
+    {
+      uploading && <p>Subiendo imagen...</p>;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "productos_prest"); // tu preset
+    try {
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/dtsjbqepe/image/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      const data = await res.json();
+      setImagen(data.secure_url); // guardamos el URL en el estado
+    } catch (err) {
+      console.error("Error al subir imagen:", err);
+    } finally {
+      setUploading(false);
+    }
+  };
+
   return (
     <>
       <div className="mb-4 flex flex-wrap gap-4">
@@ -75,10 +106,9 @@ function Crud() {
           className="border p-2"
         />
         <input
-          type="text"
-          value={imagen}
-          onChange={(e) => setImagen(e.target.value)}
-          placeholder="URL de imagenn"
+          type="file"
+          accept="image/*"
+          onChange={(e) => handleImageUpload(e)}
           className="border p-2"
         />
         {/* <input
