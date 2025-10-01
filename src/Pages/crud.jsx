@@ -111,12 +111,6 @@ function Crud() {
           onChange={(e) => handleImageUpload(e)}
           className="border p-2"
         />
-        {/* <input
-          type=""
-          onChange={(e) => setCategoria(e.target.value)}
-          placeholder="Categoría"
-          className="border p-2"
-        /> */}
         <div className="flex items-center justify-center border-1">
           <label htmlFor="categoria">Selecciona la categoria:</label>
           <select
@@ -131,9 +125,7 @@ function Crud() {
             <option value="pijamas animados adultos cortos">
               pijamas animados adultos cortos
             </option>
-            <option value="pijamas animados adultos largos">
-              pijamas animados adultos largos
-            </option>
+            <option value="pijamas adultos ">pijamas adultos</option>
             <option value="pijamas mujer verano">pijamas mujer verano</option>
             <option value="pijamas niños cortos">pijamas niños cortos</option>
             <option value="pijamas niños largos">pijamas niños largos</option>

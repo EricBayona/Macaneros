@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useState } from "react";
-// import { requestData } from "../../Helpers/requestData";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../../fireBase/configFireBase";
 import { useParams } from "react-router-dom";
@@ -11,19 +10,6 @@ function ItemListConteiner() {
   const [visibleProducts, setVisibleProducts] = useState(5);
   const [title, setTitle] = useState("Pijamas");
   const category = useParams().category;
-
-  // useEffect(() => {
-  //   requestData().then((res) => {
-  //     if (category) {
-  //       setProducts(res.filter((prod) => prod.categoria === category));
-  //       setTitle(category.charAt(0).toUpperCase() + category.slice(1));
-  //     } else {
-  //       setProducts(res);
-  //       setTitle("");
-  //     }
-  //     setVisibleProducts(5)
-  //   });
-  // }, [category]);
   useEffect(() => {
     const productsRef = collection(db, "productos");
     const q = category
