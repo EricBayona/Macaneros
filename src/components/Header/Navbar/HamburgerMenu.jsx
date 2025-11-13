@@ -23,30 +23,12 @@ function HamburgerMenu({ isOpen, handleClose }) {
       </Link>
       <AccordionItem title="Adultos">
         <Link to="/products/pijamas adultos" onClick={handleClose}>
-          Adultos
+          <h4>Adultos</h4>
         </Link>
         <Link to="products/pijamas animados adultos" onClick={handleClose}>
-          Adultos Pijamas Animados
+          <h4>Adultos Pijamas Animados</h4>
         </Link>
       </AccordionItem>
-
-      {/* <AccordionItem title="Adultos">
-        <Link
-          to="/products/pijamas animados adultos cortos"
-          onClick={handleClose}
-        >
-          <h4>Pijamas Animados cortos</h4>
-        </Link>
-        <Link
-          to="/products/pijamas animados adultos largos"
-          onClick={handleClose}
-        >
-          <h4>Pijamas Animados largos</h4>
-        </Link>
-        <Link to="/products/pijamas mujer verano" onClick={handleClose}>
-          <h4>Pijamas Mujer Verano</h4>
-        </Link>
-      </AccordionItem> */}
       <AccordionItem title="Teens">
         <Link to="/products/teens" onClick={handleClose}>
           Ver todo Teens
