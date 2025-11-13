@@ -122,11 +122,10 @@ function Crud() {
             <option value="" disabled>
               Seleccione una categoría
             </option>
-            <option value="pijamas animados adultos cortos">
-              pijamas animados adultos cortos
+            <option value="pijamas animados adultos">
+              pijamas animados adultos
             </option>
-            <option value="pijamas adultos ">pijamas adultos</option>
-            <option value="pijamas mujer verano">pijamas mujer verano</option>
+            <option value="pijamas adultos">pijamas adultos</option>
             <option value="pijamas niños cortos">pijamas niños cortos</option>
             <option value="pijamas niños largos">pijamas niños largos</option>
             <option value="pijamas tres piezas">pijamas tres piezas</option>

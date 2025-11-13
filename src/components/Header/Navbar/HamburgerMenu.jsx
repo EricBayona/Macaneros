@@ -27,6 +27,12 @@ function HamburgerMenu({ isOpen, handleClose }) {
       >
         Adultos
       </Link>
+      <Link
+        className="font-bold text-gray-800 w-full text-left flex justify-between items-center p-4"
+        to="products/pijamas animados adultos"
+      >
+        Adultos Pijamas Animados
+      </Link>
       {/* <AccordionItem title="Adultos">
         <Link
           to="/products/pijamas animados adultos cortos"
