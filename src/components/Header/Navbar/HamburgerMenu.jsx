@@ -21,18 +21,15 @@ function HamburgerMenu({ isOpen, handleClose }) {
       >
         Ver Todo
       </Link>
-      <Link
-        className="font-bold text-gray-800 w-full text-left flex justify-between items-center p-4"
-        to="/products/pijamas adultos"
-      >
-        Adultos
-      </Link>
-      <Link
-        className="font-bold text-gray-800 w-full text-left flex justify-between items-center p-4"
-        to="products/pijamas animados adultos"
-      >
-        Adultos Pijamas Animados
-      </Link>
+      <AccordionItem title="Adultos">
+        <Link to="/products/pijamas adultos" onClick={handleClose}>
+          Adultos
+        </Link>
+        <Link to="products/pijamas animados adultos" onClick={handleClose}>
+          Adultos Pijamas Animados
+        </Link>
+      </AccordionItem>
+
       {/* <AccordionItem title="Adultos">
         <Link
           to="/products/pijamas animados adultos cortos"
